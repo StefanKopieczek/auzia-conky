@@ -115,18 +115,18 @@ end
 
 
 function draw_net()
-    ring_clockwise(S.net.x, S.net.y, S.net.radius, 15, S.net.begin_angle, S.net.end_angle, download_speed_kb(), download_rate_maximum, colors.fg)
-    ring_clockwise(S.net.x, S.net.y, S.net.radius-18, 15, S.net.begin_angle, S.net.end_angle, upload_speed_kb(), upload_rate_maximum, colors.fg)
+    ring_clockwise(S.net.x, S.net.y, S.net.radius,S.net.width, S.net.begin_angle, S.net.end_angle, download_speed_kb(), download_rate_maximum, colors.fg)
+    ring_clockwise(S.net.x, S.net.y, S.net.radius-40, S.net.width, S.net.begin_angle, S.net.end_angle, upload_speed_kb(), upload_rate_maximum, colors.fg)
 
-    write(S.net.indicators.down.x, S.net.indicators.down.y, "▼ ".. download_speed(), 22, colors.text)
-    write(S.net.indicators.up.x, S.net.indicators.up.y, "▲ "..upload_speed(), 22, colors.text)
+    write(S.net.indicators.down.x, S.net.indicators.down.y, "▼ ".. download_speed(), 24, colors.text)
+    write(S.net.indicators.up.x, S.net.indicators.up.y, "▲ "..upload_speed(), 24, colors.text)
 
-    write(S.net.total.down.x-50, S.net.y, "Total ", 22, colors.text)
-    write(S.net.total.down.x, S.net.total.down.y, "▼".. download_total(), 22, colors.text)
-    write(S.net.total.up.x, S.net.total.up.y, "▲"..upload_total(), 22, colors.text)
+    write(S.net.total.down.x-100, S.net.y, "Total ", 28, colors.text)
+    write(S.net.total.down.x, S.net.total.down.y, "▼".. download_total(), 26, colors.text)
+    write(S.net.total.up.x, S.net.total.up.y, "▲"..upload_total(), 26, colors.text)
 
     local inf = {}
-    table.insert(inf, "SSID: " .. string.sub(ssid(), 0, 15))
+    table.insert(inf, "SSID: " .. string.sub(ssid(), 0, 30))
     table.insert(inf, "Wifi Signal:    " .. wifi_signal() .. "%")
     table.insert(inf, "Local IP:       " .. local_ip())
     if use_public_ip then
@@ -135,7 +135,7 @@ function draw_net()
         end
         table.insert(inf, "Public IP:      " .. get_public_ip())
     end
-    write_line_by_line(S.net.list.x, S.net.list.y, 20, inf, colors.text, 22)
+    write_line_by_line(S.net.list.x, S.net.list.y, 28, inf, colors.text, 26)
 end
 
 
@@ -154,7 +154,7 @@ end
 function draw_titles()
     if not to_draw_titles then return end
     write(180, 270, "CPU", 32, colors.text)
-    write(325, S.net.y+80, "Internet", 32, colors.text)
+    write(775, S.net.y+120, "Internet", 32, colors.text)
     write(S.mem.text.ring_title.x, S.mem.text.ring_title.y, "Memory", 32, colors.text)
     write(S.disk.x-75, S.disk.y-S.disk.radius+380, "Hard Disk", 32, colors.text)
 end

@@ -54,21 +54,21 @@ local S = {
     },
 
     net = {
-        x              = 360,
-        y              = 500,
-        width          = 10,
-        radius         = 120,
+        x              = 850,
+        y              = 1025,
+        radius         = 240,
+        width      = 34,
         begin_angle    = 0,
         end_angle      = 320,
         indicators = {
-            down       = {x = 295, y = 385},
-            up         = {x = 295, y = 405},
+            down       = {x = 710, y = 800},
+            up         = {x = 710, y = 835},
         },
         total = {
-            down       = {x = 360, y = 510},
-            up         = {x = 360, y = 490},
+            down       = {x = 835, y = 1000},
+            up         = {x = 835, y = 1050},
         },
-        list = {x = 10, y = 440},
+        list = {x = 20, y = 1050},
     },
 
 
