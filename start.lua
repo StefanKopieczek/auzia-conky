@@ -6,11 +6,11 @@
 -- License:     GPL-3.0
 -- repository:  https://www.github.com/SZinedine/auzia-conky
 ----------------------------------
-require("abstract")
+dofile("/home/stefan/installers/auzia-conky/abstract.lua")
 require("cairo")
 require("cairo_xlib")
 
-local S = require("rc/gauge")
+local S = dofile("/home/stefan/installers/auzia-conky/rc/gauge.lua")
 local to_draw_titles = true
 
 -- set the appropriate cpu object according to the chosen value for `cpu_cores`

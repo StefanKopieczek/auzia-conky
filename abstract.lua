@@ -9,7 +9,7 @@
 
 require("cairo")
 require("imlib2")
-require("settings")
+dofile("/home/stefan/installers/auzia-conky/settings.lua")
 
 ---@alias font_slant_t
 ---| "CAIRO_FONT_SLANT_NORMAL"

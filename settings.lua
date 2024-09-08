@@ -1,4 +1,4 @@
-require("colors")
+dofile("/home/stefan/installers/auzia-conky/colors.lua")
 
 --[[
 possible values of THEME
