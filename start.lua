@@ -57,7 +57,7 @@ function draw_cpu()
         draw_single_cpu_core(ncores[i])
     end
 
-    write_list_proccesses_cpu(160, 147, 20, 4, 22, colors.text)
+    write_list_proccesses_cpu(360, 320, 22, 7, 22, colors.text)
 end
 
 
@@ -153,7 +153,7 @@ end
 
 function draw_titles()
     if not to_draw_titles then return end
-    write(180, 270, "CPU", 32, colors.text)
+    write(410, 550, "CPU", 32, colors.text)
     write(775, S.net.y+120, "Internet", 32, colors.text)
     write(S.mem.text.ring_title.x, S.mem.text.ring_title.y, "Memory", 32, colors.text)
     write(S.disk.x-75, S.disk.y-S.disk.radius+380, "Hard Disk", 32, colors.text)
