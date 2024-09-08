@@ -14,15 +14,15 @@ local S = {
 
 
     battery = {
-        x              = 610,
-        y              = -900,
-        radius         = 1600,
-        width          = 3,
+        x              = 1280,
+        y              = -1800,
+        radius         = 3200,
+        width          = 10,
         begin          = -160,
         end_           = -200,
         text = {
-            perc  = { x = 1160, y = 608 }, 
-            title = { x = 570, y = 720 }, 
+            perc  = { x = 2385, y = 1205 }, 
+            title = { x = 1230, y = 1445 }, 
         },
     },
 
