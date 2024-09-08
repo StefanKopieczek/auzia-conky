@@ -1,14 +1,14 @@
 
 local S = {
     mem = {
-        x                 = 1020,
-        y                 = 200,
-        radius            = 160,
+        x                 = 2150,
+        y                 = 400,
+        radius            = 340,
         text = {
-            indicators    = { x = 950, y = 40 },
-            process_title = { x = 930, y = 150 },
-            processes     = { x = 945, y = 170 },
-            ring_title    = { x = 990, y = 320 },
+            indicators    = { x = 2030, y = 70 },
+            process_title = { x = 2010, y = 220 },
+            processes     = { x = 2010, y = 290 },
+            ring_title    = { x = 2090, y = 650 },
         }
     },
 

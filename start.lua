@@ -47,7 +47,7 @@ function draw_single_cpu_core(coreN)
     ring_anticlockwise(S.cpu.x, S.cpu.y, coreN.radius, coreN.thickness, coreN.begin_angle, coreN.end_angle, val, coreN.max_value, color_frompercent(tonumber(val)))
 
     if coreN.text ~= nil then
-        write(coreN.text.x, coreN.text.y, val .. coreN.text.post_particle, 12, colors.text)
+        write(coreN.text.x, coreN.text.y, val .. coreN.text.post_particle, 22, colors.text)
     end
 end
 
@@ -57,22 +57,22 @@ function draw_cpu()
         draw_single_cpu_core(ncores[i])
     end
 
-    write_list_proccesses_cpu(160, 147, 20, 4, 12, colors.text)
+    write_list_proccesses_cpu(160, 147, 20, 4, 22, colors.text)
 end
 
 
 function draw_memory()
     local memperc = memory_percent()
     local swpperc = swap_percent()
-    local usedmem = string.format("Usage: %s / %s (%s%s)", memory(), memory_max(), memperc, "%")
+    local usedmem = string.format("%s / %s (%s%s)", memory(), memory_max(), memperc, "%")
 
-    ring_clockwise(S.mem.x, S.mem.y, S.mem.radius, 18, 0, 320, memperc, 100, color_frompercent(tonumber(memperc)))
-    ring_clockwise(S.mem.x, S.mem.y, S.mem.radius-18, 14, 0, 320, swpperc, 100, color_frompercent(tonumber(swpperc)))
-    write(S.mem.text.indicators.x, S.mem.text.indicators.y, "ram: " ..memperc .. "%", 12, colors.text)
-    write(S.mem.text.indicators.x, S.mem.text.indicators.y+22, "swap: " ..swpperc .. "%", 12, colors.text)
+    ring_clockwise(S.mem.x, S.mem.y, S.mem.radius, 22, 0, 320, memperc, 100, color_frompercent(tonumber(memperc)))
+    ring_clockwise(S.mem.x, S.mem.y, S.mem.radius-18, 26, 0, 320, swpperc, 100, color_frompercent(tonumber(swpperc)))
+    write(S.mem.text.indicators.x, S.mem.text.indicators.y, "ram: " ..memperc .. "%", 22, colors.text)
+    write(S.mem.text.indicators.x, S.mem.text.indicators.y+22, "swap: " ..swpperc .. "%", 22, colors.text)
 
-    write(S.mem.text.process_title.x, S.mem.text.process_title.y, usedmem, 12, colors.text)
-    write_list_proccesses_mem(S.mem.text.processes.x, S.mem.text.processes.y, 20, 5, 12, colors.text)
+    write(S.mem.text.process_title.x, S.mem.text.process_title.y, usedmem, 22, colors.text)
+    write_list_proccesses_mem(S.mem.text.processes.x, S.mem.text.processes.y, 30, 10, 22, colors.text)
 end
 
 
@@ -88,8 +88,8 @@ function draw_clock()
 
     write_bold(S.clock.hr.x, S.clock.hr.y, h, S.clock.font_height, colors.text)
     write(S.clock.mn.x, S.clock.mn.y, m, S.clock.font_m, colors.text)
-    write(S.clock.dt.x, S.clock.dt.y, date, 12, colors.text)
-    write(S.clock.ut.x, S.clock.ut.y, "Uptime: " .. uptime_short(), 11, colors.text)
+    write(S.clock.dt.x, S.clock.dt.y, date, 22, colors.text)
+    write(S.clock.ut.x, S.clock.ut.y, "Uptime: " .. uptime_short(), 20, colors.text)
 end
 
 
@@ -102,14 +102,14 @@ function draw_disks()
     ring_anticlockwise(S.disk.x, S.disk.y, S.disk.radius, S.disk.thickness, S.disk.begin_angle, S.disk.end_angle, rt, 100, color_frompercent(tonumber(rt)))
     ring_anticlockwise(S.disk.x, S.disk.y, S.disk.radius-22, S.disk.thickness, S.disk.begin_angle, S.disk.end_angle, hm, 100, color_frompercent(tonumber(hm)))
 
-    write(S.disk.x+45, S.disk.y-S.disk.radius+10, rt_text, 11, colors.text)
-    write(S.disk.x+40, S.disk.y-S.disk.radius+35, hm_text, 11, colors.text)
+    write(S.disk.x+45, S.disk.y-S.disk.radius+10, rt_text, 20, colors.text)
+    write(S.disk.x+40, S.disk.y-S.disk.radius+35, hm_text, 20, colors.text)
 
     local dsk_info = {
         "Read:  " .. diskio_read(""),
         "Write: " .. diskio_write(""),
     }
-    write_line_by_line(S.disk.x-40, S.disk.y-10, 20, dsk_info, colors.text, 12)
+    write_line_by_line(S.disk.x-40, S.disk.y-10, 20, dsk_info, colors.text, 22)
 
 end
 
@@ -118,12 +118,12 @@ function draw_net()
     ring_clockwise(S.net.x, S.net.y, S.net.radius, 15, S.net.begin_angle, S.net.end_angle, download_speed_kb(), download_rate_maximum, colors.fg)
     ring_clockwise(S.net.x, S.net.y, S.net.radius-18, 15, S.net.begin_angle, S.net.end_angle, upload_speed_kb(), upload_rate_maximum, colors.fg)
 
-    write(S.net.indicators.down.x, S.net.indicators.down.y, "▼ ".. download_speed(), 12, colors.text)
-    write(S.net.indicators.up.x, S.net.indicators.up.y, "▲ "..upload_speed(), 12, colors.text)
+    write(S.net.indicators.down.x, S.net.indicators.down.y, "▼ ".. download_speed(), 22, colors.text)
+    write(S.net.indicators.up.x, S.net.indicators.up.y, "▲ "..upload_speed(), 22, colors.text)
 
-    write(S.net.total.down.x-50, S.net.y, "Total ", 12, colors.text)
-    write(S.net.total.down.x, S.net.total.down.y, "▼".. download_total(), 12, colors.text)
-    write(S.net.total.up.x, S.net.total.up.y, "▲"..upload_total(), 12, colors.text)
+    write(S.net.total.down.x-50, S.net.y, "Total ", 22, colors.text)
+    write(S.net.total.down.x, S.net.total.down.y, "▼".. download_total(), 22, colors.text)
+    write(S.net.total.up.x, S.net.total.up.y, "▲"..upload_total(), 22, colors.text)
 
     local inf = {}
     table.insert(inf, "SSID: " .. string.sub(ssid(), 0, 15))
@@ -135,7 +135,7 @@ function draw_net()
         end
         table.insert(inf, "Public IP:      " .. get_public_ip())
     end
-    write_line_by_line(S.net.list.x, S.net.list.y, 20, inf, colors.text, 12)
+    write_line_by_line(S.net.list.x, S.net.list.y, 20, inf, colors.text, 22)
 end
 
 
@@ -146,17 +146,17 @@ function draw_battery()
     end
     local bat = battery_percent()
     ring_anticlockwise(S.battery.x, S.battery.y, S.battery.radius, S.battery.width , S.battery.begin, S.battery.end_, bat, 100, color_frompercent_reverse(tonumber(bat)))
-    write(S.battery.text.perc.x, S.battery.text.perc.y, bat .. "%", 15, colors.text)
-    write(S.battery.text.title.x, S.battery.text.title.y, "Battery", 15, colors.text)
+    write(S.battery.text.perc.x, S.battery.text.perc.y, bat .. "%", 28, colors.text)
+    write(S.battery.text.title.x, S.battery.text.title.y, "Battery", 28, colors.text)
 end
 
 
 function draw_titles()
     if not to_draw_titles then return end
-    write(180, 270, "CPU", 18, colors.text)
-    write(325, S.net.y+80, "Internet", 15, colors.text)
-    write(S.mem.text.ring_title.x, S.mem.text.ring_title.y, "Memory", 18, colors.text)
-    write(S.disk.x+100, S.disk.y-S.disk.radius+130, "Hard Disk", 15, colors.text)
+    write(180, 270, "CPU", 32, colors.text)
+    write(325, S.net.y+80, "Internet", 32, colors.text)
+    write(S.mem.text.ring_title.x, S.mem.text.ring_title.y, "Memory", 32, colors.text)
+    write(S.disk.x+100, S.disk.y-S.disk.radius+130, "Hard Disk", 32, colors.text)
 end
 
 
