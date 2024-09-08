@@ -97,19 +97,19 @@ function draw_disks()
     local rt = fs_used_perc("/")
     local hm = fs_used_perc("/home")
     local rt_text = string.format("Root: %s / %s (%s)", fs_used("/"), fs_size("/"), fs_free("/"))
-    local hm_text = string.format("Home: %s / %s (%s)", fs_used("/home"), fs_size("/home"), fs_free("/home"))
+    local hm_text = string.format("Boot: %s / %s (%s)", fs_used("/boot"), fs_size("/boot"), fs_free("/boot"))
 
     ring_anticlockwise(S.disk.x, S.disk.y, S.disk.radius, S.disk.thickness, S.disk.begin_angle, S.disk.end_angle, rt, 100, color_frompercent(tonumber(rt)))
     ring_anticlockwise(S.disk.x, S.disk.y, S.disk.radius-22, S.disk.thickness, S.disk.begin_angle, S.disk.end_angle, hm, 100, color_frompercent(tonumber(hm)))
 
-    write(S.disk.x+45, S.disk.y-S.disk.radius+10, rt_text, 20, colors.text)
-    write(S.disk.x+40, S.disk.y-S.disk.radius+35, hm_text, 20, colors.text)
+    write(S.disk.x+90, S.disk.y-S.disk.radius+23, rt_text, 22, colors.text)
+    write(S.disk.x+80, S.disk.y-S.disk.radius+48, hm_text, 22, colors.text)
 
     local dsk_info = {
         "Read:  " .. diskio_read(""),
         "Write: " .. diskio_write(""),
     }
-    write_line_by_line(S.disk.x-40, S.disk.y-10, 20, dsk_info, colors.text, 22)
+    write_line_by_line(S.disk.x-75, S.disk.y-20, 35, dsk_info, colors.text, 26)
 
 end
 
@@ -156,7 +156,7 @@ function draw_titles()
     write(180, 270, "CPU", 32, colors.text)
     write(325, S.net.y+80, "Internet", 32, colors.text)
     write(S.mem.text.ring_title.x, S.mem.text.ring_title.y, "Memory", 32, colors.text)
-    write(S.disk.x+100, S.disk.y-S.disk.radius+130, "Hard Disk", 32, colors.text)
+    write(S.disk.x-75, S.disk.y-S.disk.radius+380, "Hard Disk", 32, colors.text)
 end
 
 

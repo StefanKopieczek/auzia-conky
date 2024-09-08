@@ -17,7 +17,7 @@ local S = {
         x              = 1280,
         y              = -1800,
         radius         = 3200,
-        width          = 10,
+        width          = 7,
         begin          = -160,
         end_           = -200,
         text = {
@@ -42,10 +42,10 @@ local S = {
 
 
     disk = {
-        x              = 840,
-        y              = 500,
-        radius         = 120,
-        thickness      = 18,
+        x              = 1750,
+        y              = 1025,
+        radius         = 240,
+        thickness      = 28,
         begin_angle    = 20,
         end_angle      = -260,
         text = {
