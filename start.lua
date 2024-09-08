@@ -88,8 +88,8 @@ function draw_clock()
 
     write_bold(S.clock.hr.x, S.clock.hr.y, h, S.clock.font_height, colors.text)
     write(S.clock.mn.x, S.clock.mn.y, m, S.clock.font_m, colors.text)
-    write(S.clock.dt.x, S.clock.dt.y, date, 22, colors.text)
-    write(S.clock.ut.x, S.clock.ut.y, "Uptime: " .. uptime_short(), 20, colors.text)
+    write(S.clock.dt.x, S.clock.dt.y, date, 28, colors.text)
+    write(S.clock.ut.x, S.clock.ut.y, "Uptime: " .. uptime_short(), 28, colors.text)
 end
 
 

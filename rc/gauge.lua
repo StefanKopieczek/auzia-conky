@@ -28,16 +28,16 @@ local S = {
 
 
     clock = {
-        x              = 600,
-        y              = 300,
+        x              = 1300,
+        y              = 530,
         width          = 10,
-        radius         = 140,
-        font_height    = 110,
-        font_m         = 84,
-        hr             = { x = 510, y = 290 },
-        mn             = { x = 590, y = 380 },
-        dt             = { x = 550, y = 310 },
-        ut             = { x = 550, y = 410 },
+        radius         = 280,
+        font_height    = 200,
+        font_m         = 150,
+        hr             = { x = 1110, y = 480 },
+        mn             = { x = 1275, y = 690 },
+        dt             = { x = 1160, y = 545 },
+        ut             = { x = 1175, y = 765 },
     },
 
 
