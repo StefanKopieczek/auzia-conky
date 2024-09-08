@@ -7,6 +7,8 @@
 -- repository:  https://www.github.com/SZinedine/auzia-conky
 ----------------------------------
 require("abstract")
+require("cairo")
+require("cairo_xlib")
 
 local S = require("rc/gauge")
 local to_draw_titles = true

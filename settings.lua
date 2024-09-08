@@ -35,7 +35,7 @@ change_color_on_threshold = true
 CPU Cores (threads really)
 valid values are: 0, 2, 4, 6, 8, 10, 12
 ]]
-cpu_cores = 4
+cpu_cores = 8
 
 --[[
 EDIT THIS to match your network interface.
@@ -47,8 +47,8 @@ net_interface = "wlan0"
 --[[
 this depends on your own internet speed
 ]]
-download_rate_maximum = 1000     -- kb
-upload_rate_maximum   = 1000     -- kb
+download_rate_maximum = 1000000     -- kb
+upload_rate_maximum   = 1000000     -- kb
 
 --[[
 This is the default font used in write() if no other is provided
