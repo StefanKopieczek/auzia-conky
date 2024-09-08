@@ -15,29 +15,29 @@ local S = {
 
     battery = {
         x              = 1280,
-        y              = -1800,
+        y              = -1750,
         radius         = 3200,
         width          = 7,
         begin          = -160,
         end_           = -200,
         text = {
-            perc  = { x = 2385, y = 1205 }, 
-            title = { x = 1230, y = 1445 }, 
+            perc  = { x = 2385, y = 1305 }, 
+            title = { x = 1230, y = 1495 }, 
         },
     },
 
 
     clock = {
         x              = 1300,
-        y              = 530,
+        y              = 400,
         width          = 10,
         radius         = 280,
         font_height    = 200,
         font_m         = 150,
-        hr             = { x = 1110, y = 480 },
-        mn             = { x = 1275, y = 690 },
-        dt             = { x = 1160, y = 545 },
-        ut             = { x = 1175, y = 765 },
+        hr             = { x = 1110, y = 350 },
+        mn             = { x = 1275, y = 560 },
+        dt             = { x = 1160, y = 415 },
+        ut             = { x = 1175, y = 635 },
     },
 
 
